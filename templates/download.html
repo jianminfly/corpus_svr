@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<form role="form" action="/download" method="post">
+  <div class="form-group">
+	{%for file in filenames%}
+	<p><a href="/download/{{file}}">  {{file}}  </a></p>
+	{%endfor%}
+    <input type="submit" class="btn btn-primary" value="下载全部" />
+  </div>
+</form>
+{% include 'flash.html' %}
+{% endblock %}

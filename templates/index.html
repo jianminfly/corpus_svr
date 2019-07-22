@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+<form name="index1" action="/searchResult" method="post">
+    输入你想查询的词语:
+	<input type="text" name="inputword" />
+	<input type="submit" value="查询"/>
+	</br>
+</form>
+<form action="/Upload" method="post" enctype="multipart/form-data">
+	选择一个语料文件上传:
+  <p><input type="file" name="file">
+     <input type="submit" value="上传">
+	 </br>
+
+	 <input type="submit" formaction="/classifyWords" value="分词" />
+	 <input type="submit" formaction="/download" value="下载" />
+</form>
+</br>
+
+<ol>
+{%for res in results%}
+	<li>{{res}}</li>
+{%endfor%}
+</ol>
+{% endblock %}

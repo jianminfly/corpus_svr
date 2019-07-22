@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<form role="form" action="/Upload" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+ 	<label>选择一个语料文件上传:</label>
+  <p> <input type="file" name="file"></input>
+  </p>
+     <input type="submit" class="btn btn-primary" value="上传"></input>
+  </div>
+</form>
+<form role="form" action="/trainModule" method="post" >
+<div class="form-group">
+<input type="submit" class="btn btn-primary" value="训练"></input>
+</div>
+</form>
+{% include 'flash.html' %}
+{% endblock %}

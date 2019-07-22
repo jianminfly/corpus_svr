@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet"/>
+	<link href="/static/css/bootstrap-theme.min.css" rel="stylesheet"/>
+	<meta charset="UTF-8">
+	<title>语料分析系统</title>
+</head>
+
+<body>
+	<p class="container">
+	<h1>语料分析系统</h1>
+	<nav class="navbar navbar-inverse">
+	<p class="navbar-collapse">
+	<ul class="nav navbar-nav">
+		<li id='searchindex'><a href="/searchindex">查询</a></li>
+		<li id='trainindex'><a href="/trainindex">训练</a></li>
+		<li id='downloadindex'><a href="/downloadindex">下载</a></li>
+	</ul>
+	</p>
+	</nav>
+	
+	<p id="content" class="row-fluid">
+	<p class="col-md-12">
+	{% block content %}{% endblock %}
+	</p>
+	</p>
+	
+	<script type="text/javascript" src="/static/lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	//实现导航栏选中效果
+		$(document).ready(function(){
+			var location=window.location.href;
+			var id=location.substring(location.lastIndexOf('/')+1);
+			$("#"+id).addClass("active");
+		});
+	</script>
+</body>
+
+</html>
